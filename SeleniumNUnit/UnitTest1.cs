@@ -63,7 +63,7 @@ namespace SeleniumNUnit
             //IWebElement element = driver.FindElement(By.Id("search_form_input_homepage"));
 
             IWebElement element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.Id("search_form_input_homepage")));
-            element.SendKeys("LambdaTest");
+            element.SendKeys("Manual fill text");
 
             /* Submit the Search */
 
