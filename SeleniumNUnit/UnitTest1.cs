@@ -41,7 +41,8 @@ namespace SeleniumNUnit
     class NUnit_Demo_1
     {
         Browser_ops brow = new Browser_ops();
-        String test_url = "https://www.duckduckgo.com";
+        //String test_url = "https://www.duckduckgo.com";
+        String test_url = "http://localhost:8080/greenfield/";
         IWebDriver driver;
 
         [SetUp]
@@ -73,6 +74,9 @@ namespace SeleniumNUnit
 
             /* Perform wait to check the output */
             System.Threading.Thread.Sleep(2000);
+
+            
+
         }
 
         [TearDown]
