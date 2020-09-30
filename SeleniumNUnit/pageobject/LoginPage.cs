@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
-using SeleniumExtras;
+
 
 
 namespace SeleniumNUnit.pageobject
@@ -11,9 +8,7 @@ namespace SeleniumNUnit.pageobject
     class LoginPage
     {
         private readonly IWebDriver driver;
-		//private SeleniumContext seleniumContext;
-
-
+		
 		/*
 		[FindsBy(How = How.Id, Using = "username")]
 		protected IWebElement username { get; set; }

@@ -10,6 +10,6 @@ namespace SeleniumNUnit.bases
 
 		public static string LogginUsername { get => logginUsername; set => logginUsername = value; }
 
- 
-	}
+
+    }
 }

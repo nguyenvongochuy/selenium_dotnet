@@ -14,13 +14,24 @@ namespace SeleniumNUnit.stepsdefinition
         private LoginPage loginPage;
         private HomePage homePage;
 
+        [BeforeScenario]
+        public void SetUp()
+        {
+            driver = Base.getDriver();
+            loginPage = new LoginPage(driver);
+            homePage = new HomePage(driver);
+        }
+
+        [AfterScenario]
+        public void TearDown()
+        {
+            // Cleanup code
+        }
+
+        
         [Given(@"User is on login page")]
         public void GivenUserIsOnLoginPage()
         {
-            this.driver = Base.getDriver("chrome");
-            this.homePage = new HomePage(driver);
-            this.loginPage = new LoginPage(driver);
-
             Assert.IsTrue(loginPage.isInLoginPage());
 
         }
@@ -43,12 +54,22 @@ namespace SeleniumNUnit.stepsdefinition
         [When(@"User sign up with below pair info username ""(.*)"" and password ""(.*)""")]
         public void WhenUserSignUpWithBelowPairInfoUserNameAndPassWord(string username, string password)
         {
-            this.loginPage.fillUserName(username);
-            this.loginPage.fillPassword(password);
-            this.loginPage.clickLogin();
+            loginPage.fillUserName(username);
+            loginPage.fillPassword(password);
+            loginPage.clickLogin();
 
             Session.LogginUsername = username;
         }
+
+        [Then(@"Still in login page")]
+        public void ThenStillInLoginPage()
+        {
+            Assert.IsTrue(loginPage.isInLoginPage());
+        }
+
+
+       
+
 
 
 
